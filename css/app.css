@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+
+:root{
+    --main: #045280;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: purple;
+}
+
+.container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    overflow: hidden;
+}
+
+.card__body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+}
+
+.card__image__background{
+    position: relative;
+    width: 50%;
+    height: 475px;
+    box-shadow: -15px 0 35px rgba(0, 0, 0, 0.1), 0 -15px 35px rgba(0, 0, 0, 0.1), 
+    0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.background__colors{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.background__color{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2;
+}
+
+.first{
+    z-index: 0;
+    animation: 1s width ease;
+}
+
+@keyframes width{
+    from{
+        width: 0%;
+    }
+    to{
+        width: 100%;
+    }
+}
+
+.second{
+    z-index: -1;
+}
+
+
+.background__color[color ="blue"]{
+    background-image: linear-gradient(45deg, #070f24, #045280);
+}
+.background__color[color ="red"]{
+    background-image: linear-gradient(45deg, #490505, #e21f1c);
+}
+.background__color[color ="green"]{
+    background-image: linear-gradient(45deg, #072407, #15cc15);
+}
+.background__color[color ="orange"]{
+    background-image: linear-gradient(45deg, #491101, #865a02);
+}
+.background__color[color ="black"]{
+    background-image: linear-gradient(45deg, #020202, #141212);
+}
+
+.nike{
+    position: absolute;
+    top: 85px;
+    left: 15px;
+    font-size: 176px;
+    text-transform: uppercase;
+    line-height: 0.9;
+    color: whitesmoke;
+    opacity: 0.1;
+}
+
+.logo{
+    position: absolute;
+    width: 100px;
+    left: 20px;
+    top: 20px;
+}
+
+.share__icon{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: whitesmoke;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 21px;
+    text-decoration: none;
+    color: var(--main);
+    transition: 0.3s;
+}
+.share__icon i{
+    line-height: 50px;
+}
+
+.share__icon:hover{
+    transform: scale(1.2);
+}
+
+.shoe{
+    position: absolute;
+    width: 140%;
+    opacity: 0;
+    bottom: 0;
+    right: 0;
+    transform: rotate(-20deg);
+}
+
+.shoe.show{
+    opacity: 1;
+}
+
+.info{
+    width: 50%;
+    background-color: #ccc;
+    z-index: 1;
+    padding: 35px 40px;
+    box-shadow: 15px 0 35px rgba(0, 0, 0, 0.1),
+    0 -15px 35px rgba(0, 0, 0, 0.1),
+    0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.nike__info{
+    padding: 0 0 10px 0;
+}
+
+.nike__info div{
+    display: flex;
+    align-items: center;
+}
+
+.nike__info div .text__large{
+    margin-right: 10px;
+    font-size: 32px;
+    color: #333;
+    line-height: 1;
+}
+
+.nike__info div .new{
+    background-color: var(--main);
+    text-transform: uppercase;
+    color: whitesmoke;
+    padding: 3px 10px;
+    border-radius: 5px;
+}
+
+.nike__info .text__medium{
+    font-weight: 500;
+    color: #444;
+    margin-top: 3px;
+    text-transform: capitalize;
+}
+
+.nike__info, .nike__description, .color__container, .sneaker__size{
+    border-bottom: 1px solid #bbb5b5;
+}
+
+.nike__description{
+    padding: 10px 0;
+}
+
+.title{
+    color: #3a3a3a;
+    font-weight: 700;
+    font-size: 19px;
+    text-transform: uppercase;
+}
+
+.text{
+    color: #555;
+    font-size: 17px;
+}
+
+.color__container{
+    padding: 10px 0;
+}
+
+.colors{
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+.color{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 0 10px;
+    border: 5px solid;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.color[color="blue"]{
+    background-color: #045280;
+    border-color: #045280;
+}
+.color[color="red"]{
+    background-color: #e21f1c;
+    border-color: #e21f1c;
+}
+.color[color="green"]{
+    background-color: #15cc15;
+    border-color: #15cc15;
+}
+.color[color="orange"]{
+    background-color: #865a02;
+    border-color: #865a02;
+}
+.color[color="black"]{
+    background-color: #141212;
+    border-color: #141212;
+}
+
+.color.active{
+    border-color: whitesmoke;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+}
+
+.sneaker__size{
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+
+.sizes{
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+.size{
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    background-color: #eee;
+    margin: 0 10px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.size.active{
+    background-color: var(--main);
+    color: whitesmoke;
+}
+
+.shopping__cart{
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart__btn{
+    padding: 11px 16px;
+    background-color: var(--main);
+    text-decoration: none;
+    color: whitesmoke;
+    text-transform: uppercase;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 18px;
+    transition: 0.5s;
+}
+
+.cart__btn:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.cart__btn i{
+    margin-right: 2px;
+}
+
+.item__price{
+    color: #333;
+    display: flex;
+    align-items: flex-start;
+}
+
+.item__price h1{
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.item__price i{
+    font-size: 22px;
+    margin-right: 1px;
+}
+
+/* Responsividade */
+
+@media(max-width: 1070px){
+    .shoe{
+        width: 135%;
+    }
+}
+
+@media(max-width: 1000px){
+    .card__body{
+        flex-direction: column;
+        width: 100%;
+        box-shadow: 0 0 35px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    .card__body >div{
+        width: 100%;    
+        box-shadow: none;
+    }
+
+    .shoe{
+        width: 100%;
+        transform: rotate(-5deg) translateY(-50%);
+        top: 55%;
+        right: 2%;
+    }
+
+    .nike{
+        top: 20%;
+        left:5%
+    }
+}
+
+@media(max-width: 600px){
+    .share__icon{
+        width: 40px;
+        height: 40px;
+    }
+
+    .share__icon i{
+        font-size: 16px;
+        line-height: 40px;
+    }
+
+    .logo{
+        width: 70px;
+    }
+}
+
+@media(max-width: 490px){
+    .nike{
+        font-size: 112px;
+    }
+    .nike.info div .text__large{
+        font-size: 21px;
+    }
+    .text__medium{
+        font-size: 16px;
+    }
+    .new{
+        padding: 2px 6px;
+        font-size: 14px;
+    }
+    .title{
+        font-size: 14px;
+    }
+    .cart__btn{
+        padding: 8px 13px;
+        font-size: 13px;
+    }
+    .item__price h1{
+        font-size: 24px;
+    }
+    .item__price i{
+        font-size: 14px;
+    }
+    .size{
+        width: 30px;
+        height: 30px;
+        margin: 0 8px;
+        line-height: 30px;
+    }
+    .color{
+        margin: 0 20px;
+        width: 20px;
+        height: 20px;
+        border-width: 4px;
+    }
+    .share__icon{
+        width: 35px;
+        height: 35px;
+        top: 10px;
+        right: 10px;
+    }
+    .share__icon i{
+        font-size: 13px;
+        line-height: 35px;
+    }
+    .logo{
+        width: 60px;
+        top: 10px;
+        left: 10px;
+    }
+    .info{
+        padding: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .cart__btn i{
+        display: none;
+    }
+    .container{
+        padding: 20px;
+    }
+}
